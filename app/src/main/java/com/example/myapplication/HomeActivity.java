@@ -44,5 +44,34 @@ public class HomeActivity extends AppCompatActivity {
 
             }
         });
+
+        Button servicesBtn = findViewById(R.id.servicesBtn);
+        servicesBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(HomeActivity.this, ServicesActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        Button accommodatorsBtn = findViewById(R.id.accommodatorsBtn);
+        accommodatorsBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(HomeActivity.this, AccommodatorsActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        Button provideBtn = findViewById(R.id.provideServiceBtn);
+        provideBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(HomeActivity.this, ProfileActivity.class);
+                startActivity(intent);
+            }
+        });
+
+
     }
 }
