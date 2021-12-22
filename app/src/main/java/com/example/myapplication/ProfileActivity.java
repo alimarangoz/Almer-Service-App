@@ -13,6 +13,6 @@ public class ProfileActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_profile);
         ImageView profileImgView = findViewById(R.id.profileActivityImgView);
-        profileImgView.setImageResource(R.drawable.profile);
+        profileImgView.setImageResource(R.mipmap.ic_profile_foreground);
     }
 }

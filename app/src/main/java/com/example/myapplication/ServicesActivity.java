@@ -15,11 +15,11 @@ public class ServicesActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_services);
         ImageButton webDesignImgBtn = (ImageButton)findViewById(R.id.webDesignImageButtonId);
-        webDesignImgBtn.setImageResource(R.drawable.webdesign);
+        webDesignImgBtn.setImageResource(R.mipmap.ic_web_design_foreground);
         webDesignImgBtn.setBackgroundColor(Color.WHITE);
 
         ImageButton privateLessonImgBtn = (ImageButton)findViewById(R.id.privateLessonImgBtn);
-        privateLessonImgBtn.setImageResource(R.drawable.privatelesson);
+        privateLessonImgBtn.setImageResource(R.mipmap.ic_private_lesson_foreground);
         privateLessonImgBtn.setBackgroundColor(Color.WHITE);
 
         privateLessonImgBtn.setOnClickListener(new View.OnClickListener() {
