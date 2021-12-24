@@ -6,8 +6,4 @@
         <item>Private Lesson</item>
         <item>Domestic Work</item>
     </string-array>
-    <string-array name="acommodators">
-        <item>Ali Marangoz - Web Design</item>
-        <item>Mertcan Onur - Private Lesson</item>
-    </string-array>
 </resources>

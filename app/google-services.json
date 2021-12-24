@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "1054546205067",
+    "project_id": "almerserviceapp",
+    "storage_bucket": "almerserviceapp.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1054546205067:android:97e91911d6fea9e6c1b78e",
+        "android_client_info": {
+          "package_name": "com.example.myapplication"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1054546205067-63ph7p610dnf6c8ubsfq40ro63mnbalf.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDSeWrnjG2IV52nwvNy3NVUt5dbtqfsmzU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1054546205067-63ph7p610dnf6c8ubsfq40ro63mnbalf.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
