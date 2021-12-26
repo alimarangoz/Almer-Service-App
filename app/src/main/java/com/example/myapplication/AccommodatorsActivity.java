@@ -68,12 +68,6 @@ public class AccommodatorsActivity extends AppCompatActivity {
         });
 
 
-
-        /*ListView lv = findViewById(R.id.idListView);
-        ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this,
-                R.array.acommodators, android.R.layout.simple_list_item_1);
-        lv.setAdapter(adapter);*/
-
     }
 
 

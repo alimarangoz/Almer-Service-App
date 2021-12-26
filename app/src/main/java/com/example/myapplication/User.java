@@ -4,10 +4,19 @@ public class User {
 
     private String id;
     private String job;
+    private int day;
     private String name;
     private String email;
     private String location;
     private String description;
+
+    public int getDay() {
+        return day;
+    }
+
+    public void setDay(int day) {
+        this.day = day;
+    }
 
     public String getJob() {
         return job;
