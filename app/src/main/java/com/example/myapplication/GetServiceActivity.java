@@ -9,6 +9,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
@@ -23,18 +24,23 @@ import com.google.firebase.firestore.FirebaseFirestore;
 import java.util.HashMap;
 import java.util.Map;
 
-public class GetServiceActivity extends AppCompatActivity {
+public class GetServiceActivity extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
 
     FirebaseFirestore db;
+    String spinnerItem;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_get_service);
+
         Spinner spinner = (Spinner) findViewById(R.id.subjects_spinner);
+        spinner.setOnItemSelectedListener(this);
         ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this,
                 R.array.webDesignSubjects, android.R.layout.simple_spinner_item);
+
         spinner.setAdapter(adapter);
+
 
         EditText deadline = findViewById(R.id.deadlineTxt);
         EditText location = findViewById(R.id.locationTxt);
@@ -47,11 +53,14 @@ public class GetServiceActivity extends AppCompatActivity {
         sendBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
+                spinnerItem = spinner.getSelectedItem().toString();
                 allServicesMap.put("name",name.getText().toString());
                 allServicesMap.put("day",Integer.parseInt(deadline.getText().toString()));
                 allServicesMap.put("location",location.getText().toString());
-                allServicesMap.put("job","Web");
+                if(spinnerItem != null){
+                    allServicesMap.put("job",spinnerItem);
+                }
+
 
                 db.collection("allServices").add(allServicesMap)
                         .addOnSuccessListener(new OnSuccessListener<DocumentReference>() {
@@ -76,8 +85,17 @@ public class GetServiceActivity extends AppCompatActivity {
         });
 
 
+    }
 
+    @Override
+    public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+        Spinner spin = (Spinner) findViewById(R.id.subjects_spinner);
+        spin.setOnItemSelectedListener(this);
+        Toast.makeText(getApplicationContext(), spin.getSelectedItem().toString()+" ", Toast.LENGTH_SHORT).show();
+    }
 
-
+    @Override
+    public void onNothingSelected(AdapterView<?> parent) {
+        Toast.makeText(GetServiceActivity.this, "Nothing Selected", Toast.LENGTH_LONG).show();
     }
 }

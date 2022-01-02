@@ -4,9 +4,16 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.SearchView;
+import android.widget.Toast;
+
+import java.util.zip.Inflater;
 
 public class HomeActivity extends AppCompatActivity {
 
@@ -67,6 +74,30 @@ public class HomeActivity extends AppCompatActivity {
             }
         });
 
+
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.nav_menu,menu);
+        MenuItem.OnActionExpandListener onActionExpandListener = new MenuItem.OnActionExpandListener() {
+            @Override
+            public boolean onMenuItemActionExpand(MenuItem item) {
+                Toast.makeText(HomeActivity.this, "Search is expanded", Toast.LENGTH_SHORT).show();
+                return true;
+            }
+
+            @Override
+            public boolean onMenuItemActionCollapse(MenuItem item) {
+                Toast.makeText(HomeActivity.this, "Search is collapse", Toast.LENGTH_SHORT).show();
+                return true;
+            }
+        };
+        menu.findItem(R.id.nav_search).setOnActionExpandListener(onActionExpandListener);
+        SearchView searchView = (SearchView) menu.findItem(R.id.nav_search).getActionView();
+        searchView.setQueryHint("Search here...");
+        return super.onCreateOptionsMenu(menu);
 
     }
 }
