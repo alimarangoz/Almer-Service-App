@@ -1,5 +1,7 @@
 package com.example.myapplication;
 
+import android.widget.EditText;
+
 public class User {
 
     private String id;
@@ -9,6 +11,15 @@ public class User {
     private String email;
     private String location;
     private String description;
+
+    public User(){
+
+    }
+
+    public User(String name,String email) {
+        this.name = name;
+        this.email = email;
+    }
 
     public int getDay() {
         return day;

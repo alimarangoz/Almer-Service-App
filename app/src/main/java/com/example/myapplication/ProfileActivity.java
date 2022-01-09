@@ -5,8 +5,8 @@ import static android.content.ContentValues.TAG;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
-import android.text.Editable;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
@@ -16,15 +16,25 @@ import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.FirebaseFirestore;
 
-import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 
 public class ProfileActivity extends AppCompatActivity {
+
+    private FirebaseUser fBaseUser;
+    private DatabaseReference reference;
+    private String userID;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -59,7 +69,9 @@ public class ProfileActivity extends AppCompatActivity {
                         .addOnSuccessListener(new OnSuccessListener<DocumentReference>() {
                             @Override
                             public void onSuccess(DocumentReference documentReference) {
-                                Log.d(TAG, "DocumentSnapshot added with ID: " + documentReference.getId());
+                                Toast.makeText(ProfileActivity.this, "Changes recorded.", Toast.LENGTH_SHORT).show();
+                                Intent intent = new Intent(ProfileActivity.this,AccommodatorsActivity.class);
+                                startActivity(intent);
                             }
                         }).addOnFailureListener(new OnFailureListener() {
                     @Override
@@ -68,8 +80,31 @@ public class ProfileActivity extends AppCompatActivity {
                     }
                 });
 
-                Toast.makeText(ProfileActivity.this, "Changes recorded.", Toast.LENGTH_SHORT).show();
 
+
+            }
+        });
+
+        fBaseUser = FirebaseAuth.getInstance().getCurrentUser();
+        reference = FirebaseDatabase.getInstance().getReference("Users");
+        userID = fBaseUser.getUid();
+
+        reference.child(userID).addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                User userProfile = snapshot.getValue(User.class);
+                if(userProfile != null){
+                    String fName = userProfile.getName();
+                    String pEmail = userProfile.getEmail();
+
+                    name.setText(fName);
+                    email.setText(pEmail);
+                }
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+                Toast.makeText(ProfileActivity.this, "Error detected relation with Database!", Toast.LENGTH_SHORT).show();
             }
         });
 

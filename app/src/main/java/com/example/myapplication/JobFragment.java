@@ -60,7 +60,9 @@ public class JobFragment extends Fragment {
         jobs.add(new Job("Web Design","Web Design is required HTML,CSS,Js,React,Angular " +
                 "knowledge and also it is required for complete the job on time."));
         jobs.add(new Job("Private Lesson","Private Lessons is required graduation degree for every lesson, " +
-                "it is possible to give lesson without any degree but He/She should speak with customer face to face. "));
+                "it is possible to give lesson without any degree but He/She should communicate with customer face to face. "));
+        jobs.add(new Job("Domestic Work","Domestic work requirement is phone call with the customer. " +
+                "Job can describe as simple cleaning stuffs, repairing is available in Domestic Work. Privacy is important for this job. "));
     }
 
     @Override

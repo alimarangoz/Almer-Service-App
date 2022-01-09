@@ -5,6 +5,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.example.myapplication.placeholder.PlaceholderContent.PlaceholderItem;
@@ -37,7 +38,14 @@ public class MyJobRecyclerViewAdapter extends RecyclerView.Adapter<MyJobRecycler
     @Override
     public void onBindViewHolder(final ViewHolder holder, int position) {
         holder.mItem = mValues.get(position);
-        holder.mIdView.setText(position+1+"");
+        if(position+1 % 3 == 1){
+            holder.mJobImgView.setImageResource(R.mipmap.ic_web_design_foreground);
+        }else if(position+1 % 3 == 2){
+            holder.mJobImgView.setImageResource(R.mipmap.ic_private_lesson_foreground);
+        }else{
+            holder.mJobImgView.setImageResource(R.mipmap.ic_domestic_foreground);
+        }
+
         holder.mContentView.setText(mValues.get(position).getJobName());
         holder.mContentView.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -58,13 +66,13 @@ public class MyJobRecyclerViewAdapter extends RecyclerView.Adapter<MyJobRecycler
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder {
-        public final TextView mIdView;
+        public final ImageView mJobImgView;
         public final TextView mContentView;
         public Job mItem;
 
         public ViewHolder(FragmentJobBinding binding) {
             super(binding.getRoot());
-            mIdView = binding.itemNumber;
+            mJobImgView = binding.jobImgView;
             mContentView = binding.content;
         }
 
