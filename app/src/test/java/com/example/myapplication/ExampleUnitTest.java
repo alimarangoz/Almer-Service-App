@@ -14,4 +14,10 @@ public class ExampleUnitTest {
     public void addition_isCorrect() {
         assertEquals(4, 2 + 2);
     }
+
+    //This belongs Ali Marangoz
+    @Test
+    public void emailValidator(){
+        assertTrue(EmailValidator.isValidEmail("ali@gmail.com"));
+    }
 }

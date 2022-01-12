@@ -11,6 +11,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.ArrayList;
 
+//This part belongs to Ali Marangoz
 public class AllServicesRVAdapter extends RecyclerView.Adapter<AllServicesRVAdapter.ViewHolder> {
 
 

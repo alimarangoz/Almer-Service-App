@@ -10,7 +10,7 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.ArrayList;
-
+//This part belongs to Mertcan Onur
 public class AcommodatorRVAdapter extends RecyclerView.Adapter<AcommodatorRVAdapter.ViewHolder> {
     private ArrayList<User> acommodatorsArray;
     private Context context;

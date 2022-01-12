@@ -11,6 +11,8 @@ import android.widget.EditText;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import com.example.myapplication.HomeActivity;
 import com.example.myapplication.ProfileActivity;
 import com.example.myapplication.R;
 import com.example.myapplication.databinding.ActivityLoginBinding;
@@ -19,7 +21,7 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 
-
+//Login implementations belongs to Mertcan Onur
 public class LoginActivity extends AppCompatActivity {
 
     private ActivityLoginBinding binding;
@@ -89,7 +91,7 @@ public class LoginActivity extends AppCompatActivity {
             @Override
             public void onComplete(@NonNull Task<AuthResult> task) {
                 if(task.isSuccessful()){
-                    startActivity(new Intent(LoginActivity.this, ProfileActivity.class));
+                    startActivity(new Intent(LoginActivity.this, HomeActivity.class));
                 }else{
                     Toast.makeText(LoginActivity.this, "Failed to login, try again!", Toast.LENGTH_SHORT).show();
                 }

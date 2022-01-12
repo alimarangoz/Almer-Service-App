@@ -16,6 +16,8 @@ import android.widget.Toolbar;
  * Use the {@link JobDetailFragment#newInstance} factory method to
  * create an instance of this fragment.
  */
+
+//All Job Fragment implementations belogns to Ali Marangoz
 public class JobDetailFragment extends Fragment {
 
     private static final String Job = "job";
@@ -52,14 +54,6 @@ public class JobDetailFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
 
-/*        Toolbar toolbar = (Toolbar) getActivity().findViewById(R.id.toolbarId);
-
-        toolbar.setNavigationOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                getActivity().onBackPressed();
-            }
-        });*/
 
         if (getArguments() != null) {
             job = (Job) getArguments().getSerializable(Job);

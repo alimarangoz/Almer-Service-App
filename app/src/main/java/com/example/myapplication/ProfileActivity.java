@@ -12,6 +12,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.ProgressBar;
 import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnFailureListener;
@@ -29,11 +30,13 @@ import com.google.firebase.firestore.FirebaseFirestore;
 import java.util.HashMap;
 import java.util.Map;
 
+//This parts UI belongs Mertcan Onur, functionality belongs Ali Marangoz.
 public class ProfileActivity extends AppCompatActivity {
 
     private FirebaseUser fBaseUser;
     private DatabaseReference reference;
     private String userID;
+    ProgressBar loadingProgressBar;
 
 
     @Override
@@ -44,7 +47,7 @@ public class ProfileActivity extends AppCompatActivity {
         profileImgView.setImageResource(R.mipmap.ic_profile_foreground);
 
         FirebaseFirestore db = FirebaseFirestore.getInstance();
-
+        loadingProgressBar = findViewById(R.id.loading);
         EditText name = (EditText) findViewById(R.id.editTextTextPersonNameId);
         EditText email = findViewById(R.id.editTextTextEmailAddressId);
         EditText location = findViewById(R.id.editTextLocationId);
@@ -85,6 +88,7 @@ public class ProfileActivity extends AppCompatActivity {
             }
         });
 
+        loadingProgressBar.setVisibility(View.VISIBLE);
         fBaseUser = FirebaseAuth.getInstance().getCurrentUser();
         reference = FirebaseDatabase.getInstance().getReference("Users");
         userID = fBaseUser.getUid();
@@ -99,12 +103,13 @@ public class ProfileActivity extends AppCompatActivity {
 
                     name.setText(fName);
                     email.setText(pEmail);
+                    loadingProgressBar.setVisibility(View.GONE);
                 }
             }
 
             @Override
             public void onCancelled(@NonNull DatabaseError error) {
-                Toast.makeText(ProfileActivity.this, "Error detected relation with Database!", Toast.LENGTH_SHORT).show();
+                Toast.makeText(ProfileActivity.this, "Error detected related with Database!", Toast.LENGTH_SHORT).show();
             }
         });
 

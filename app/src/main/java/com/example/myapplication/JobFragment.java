@@ -22,6 +22,8 @@ import java.util.List;
 /**
  * A fragment representing a list of Items.
  */
+
+//All Job Fragment implementations belogns to Ali Marangoz
 public class JobFragment extends Fragment {
 
     // TODO: Customize parameter argument names
@@ -57,8 +59,8 @@ public class JobFragment extends Fragment {
 
 
 
-        jobs.add(new Job("Web Design","Web Design is required HTML,CSS,Js,React,Angular " +
-                "knowledge and also it is required for complete the job on time."));
+        jobs.add(new Job("Web Design","Web Design is required HTML, CSS, Js, React, Angular " +
+                "knowledge and also it requires complete the job on time."));
         jobs.add(new Job("Private Lesson","Private Lessons is required graduation degree for every lesson, " +
                 "it is possible to give lesson without any degree but He/She should communicate with customer face to face. "));
         jobs.add(new Job("Domestic Work","Domestic work requirement is phone call with the customer. " +

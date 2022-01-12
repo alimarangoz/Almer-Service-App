@@ -2,6 +2,7 @@ package com.example.myapplication;
 
 import java.io.Serializable;
 
+//All Job Fragment implementations belongs to Ali Marangoz
 public class Job implements Serializable {
     private String jobName;
     private String jobDescription;

@@ -20,6 +20,7 @@ import com.google.firebase.firestore.QuerySnapshot;
 import java.util.ArrayList;
 import java.util.List;
 
+//This part belongs to Ali Marangoz.
 public class AllServicesActivity extends AppCompatActivity {
 
     private RecyclerView allServiceRV;

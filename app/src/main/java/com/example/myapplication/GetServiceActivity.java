@@ -24,6 +24,7 @@ import com.google.firebase.firestore.FirebaseFirestore;
 import java.util.HashMap;
 import java.util.Map;
 
+//This part belongs to Mertcan Onur
 public class GetServiceActivity extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
 
     FirebaseFirestore db;

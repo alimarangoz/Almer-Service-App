@@ -15,6 +15,7 @@ import android.widget.Toast;
 
 import java.util.zip.Inflater;
 
+//This part belongs to Mertcan Onur
 public class HomeActivity extends AppCompatActivity {
 
     Button getService;
@@ -34,6 +35,9 @@ public class HomeActivity extends AppCompatActivity {
 
         ImageView rightArrowImgView2 = (ImageView) findViewById(R.id.rightArrowBtn2);
         rightArrowImgView2.setImageResource(R.drawable.right_arrow);
+
+        ImageView almer = findViewById(R.id.almerImg);
+        almer.setImageResource(R.mipmap.ic_almer3_foreground);
 
 
         getService = findViewById(R.id.getServiceBtn);

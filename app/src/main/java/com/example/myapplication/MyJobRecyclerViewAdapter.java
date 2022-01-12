@@ -17,6 +17,8 @@ import java.util.List;
  * {@link RecyclerView.Adapter} that can display a {@link PlaceholderItem}.
  * TODO: Replace the implementation with code for your data type.
  */
+
+//All Job Fragment implementations belogns to Ali Marangoz
 public class MyJobRecyclerViewAdapter extends RecyclerView.Adapter<MyJobRecyclerViewAdapter.ViewHolder> {
 
     private final List<Job> mValues;

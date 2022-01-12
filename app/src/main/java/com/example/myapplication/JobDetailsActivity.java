@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Toolbar;
 
+//All Job Fragment implementations belogns to Ali Marangoz
 public class JobDetailsActivity extends AppCompatActivity {
 
     @Override

@@ -19,6 +19,7 @@ import com.google.firebase.firestore.QuerySnapshot;
 import java.util.ArrayList;
 import java.util.List;
 
+//This part belongs to Mertcan Onur
 public class AccommodatorsActivity extends AppCompatActivity {
 
     private RecyclerView userRV;

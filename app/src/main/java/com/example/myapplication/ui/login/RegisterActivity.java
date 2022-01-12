@@ -21,6 +21,7 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.FirebaseDatabase;
 
+//Register implementations belongs to Mertcan Onur
 public class RegisterActivity extends AppCompatActivity {
 
     EditText fullName;

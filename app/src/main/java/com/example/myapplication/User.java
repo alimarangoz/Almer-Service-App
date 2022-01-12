@@ -1,7 +1,7 @@
 package com.example.myapplication;
 
-import android.widget.EditText;
 
+//This implementations belongs to Ali Marangoz
 public class User {
 
     private String id;
